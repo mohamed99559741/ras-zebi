@@ -63,21 +63,13 @@ nav ul li a:hover {
 
 #about {
     padding: 50px 20px;
-    background-color: #e0f7fa;
+    background-color: #e0f2f1;
     text-align: center;
 }
 
-#about h2 {
-    margin-bottom: 20px;
-    color: #00bfa5;
-}
-
-#about p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    line-height: 1.5;
+#about .about-content {
     max-width: 800px;
-    margin: 10px auto;
+    margin: 0 auto;
 }
 
 #services {
@@ -89,7 +81,6 @@ nav ul li a:hover {
 #services h2 {
     margin-bottom: 20px;
 }
-
 .services-content {
     display: flex;
     justify-content: space-around;
@@ -98,6 +89,14 @@ nav ul li a:hover {
     margin: auto;
 }
 
+#services .box {
+    background: #00bfa5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+}
 .box {
     background-color: #00bfa5;
     border: 1px solid #000000f5;
@@ -125,8 +124,8 @@ nav ul li a:hover {
 }
 
 #products h2 {
+    text-align: center;
     margin-bottom: 20px;
-    color: #00bfa5;
 }
 
 .products-container {
@@ -155,25 +154,31 @@ nav ul li a:hover {
     border-radius: 5px;
     margin-bottom: 10px;
 }
-
-.product h3 {
-    margin-bottom: 10px;
-}
-
-.product p {
-    font-size: 1em;
-    color: #666;
-}
-
-.product .price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #00bfa5;
-}
-
 .product:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.product .price {
+    font-size: 1.5em;
+    color: #00bfa5;
+}
+
+.product button {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.product button:hover {
+    background-color: #009a8d;
 }
 
 #contact-signup {
@@ -194,23 +199,19 @@ nav ul li a:hover {
     margin: auto;
 }
 
-#contact, #signup {
+.contact-signup-container .contact-text,
+.contact-signup-container .signup-text {
     flex: 1;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 10px;
+    margin: 0 20px;
+    max-width: 45%;
 }
 
-#contact h2, #signup h2 {
+.contact-signup-container h2 {
     margin-bottom: 20px;
-    font-size: 2em;
-    color: #00bfa5;
 }
 
-#contact input, #contact textarea, #signup input {
+.contact-signup-container form input,
+.contact-signup-container form textarea {
     width: calc(100% - 20px);
     padding: 15px;
     margin: 10px 0;
@@ -220,38 +221,56 @@ nav ul li a:hover {
     box-sizing: border-box;
 }
 
-#contact textarea {
-    height: 150px;
-}
-
-#contact button, #signup button {
+.contact-signup-container form button {
     background-color: #00bfa5;
     color: white;
     border: none;
-    padding: 15px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-signup-container form button:hover {
+    background-color: #009a8d;
+}
+
+#cart {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+    z-index: 1000;
+}
+
+#cart h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+#cart button {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    padding: 10px;
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 10px;
-    transition: background-color 0.3s;
 }
 
-#contact button:hover, #signup button:hover {
+#cart button:hover {
     background-color: #009a8d;
-}
-
-.additional-text {
-    flex: 1;
-    background-color: #e0f7fa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 10px;
-    font-size: 1.1em;
-    color: #00796b;
 }
 
 footer {
@@ -259,4 +278,69 @@ footer {
     text-align: center;
     background-color: #00bfa5;
     color: white;
+}
+
+#toggle-cart {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+#cart {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+    z-index: 1000;
+}
+
+#cart h2 {
+    margin-top: 0;
+}
+
+.cart-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item button {
+    background-color: #ff3b30;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.cart-item button:hover {
+    background-color: #e60012;
+}
+
+
+#cart button {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#cart button:hover {
+    background-color: #009a8d;
+}
+
+#cart-count {
+    font-weight: bold;
 }
